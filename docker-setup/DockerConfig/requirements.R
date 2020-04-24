@@ -2,3 +2,4 @@
 install.packages(c("data.table"))
 install.packages(c("devtools", "dplyr", "igraph", "visNetwork", "sparkline", "magrittr"))
 install.packages("shiny", repos="https://cran.rstudio.com/")
+install.packages(c("ggplot2", "lubridate", "ShinyTester"))
