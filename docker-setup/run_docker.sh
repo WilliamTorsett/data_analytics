@@ -3,6 +3,12 @@
 # -d flag runs in detatched mode
 # use -it to start in interactive mode
 # --rm removes the container on exit
+##
+##
+#
+# Defining timestamp variables.
+#
+TIME1=$(date +%s)
 
 #sudo docker run -d --rm \
 #    -p 28787:8787 \                         # map ports
@@ -40,5 +46,14 @@ docker run -d --rm -p 8787:8787 --name rstudio -e PASSWORD=password -e USERID=$U
 #remove the kitematic folder
 docker exec -d rstudio rm -rf /home/rstudio/kitematic
 
-docker image prune
+docker image prune --force
+TIME2=$(date -%s)
 
+## Subtracking Start-time and Stop-time proving duration of this scipt in seconds.
+
+runtime=$((TIME2 - TIME1))
+
+echo $runtime seconds
+echo docker exec -ti rstudio ps -o etime= -p "1"
+
+# Use https://thinkr-open.github.io/attachment/# to create a better way to manage dependencies.

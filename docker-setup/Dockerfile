@@ -9,10 +9,7 @@ RUN apt-get update -y && apt-get install -y \
     r-base \
     r-base-dev \
     libxml2-dev \
-    libxml2
-
-# From https://www.dabbleofdevops.com/blog/deploy-rshiny-with-the-rocker-shiny-docker-image
-RUN apt-get update && apt-get install -y \
+    libxml2 \
     sudo \
     gdebi-core \
     pandoc \
@@ -23,6 +20,7 @@ RUN apt-get update && apt-get install -y \
     xtail \
     wget
 
+# From https://www.dabbleofdevops.com/blog/deploy-rshiny-with-the-rocker-shiny-docker-image
 # Clone the repository from GitHub
 #RUN git clone https://github.com/rstudio/shiny-server.git
 

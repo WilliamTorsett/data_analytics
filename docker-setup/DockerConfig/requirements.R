@@ -1,5 +1,3 @@
 # try adding your required or favourite packages here
-install.packages(c("data.table"))
-install.packages(c("devtools", "dplyr", "igraph", "visNetwork", "sparkline", "magrittr"))
-install.packages("shiny", repos="https://cran.rstudio.com/")
-install.packages(c("ggplot2", "lubridate", "ShinyTester"))
+install.packages(c("data.table", "devtools", "dplyr", "igraph", "visNetwork", "sparkline", "magrittr", "shiny", repos="https://cran.rstudio.com/", "ggplot2", "lubridate", "ShinyTester", "addinslist"))
+install.packages("remedy")

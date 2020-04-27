@@ -20,17 +20,156 @@ runtime: shiny
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+# __Risks__
+Risk assessments are used to support the risk management methodology. Risk Management provides an approach to understand the business requirements and determine the Opportunity versus the Threat to idnentify the security risks appropriately.
 
-Risk Appettite
+## Risks: Threats and Opportunities.
+Risks can be either positive or a negative. Every business or organisation is looking to exploit an opportunity in order to achieve a business strategy and objective. 
 
-Threats
+Every time a business seeks to exploit an opportunity, this creates an equal and opposite opportunity for a threat actor to exploit a security weakness of the business. i.e. The application of implementing the opportunity increases the potentail attack surface.
 
-Vulnerabilities
+## Risk Mitigation
+As a consequence of identyfying the security risks the following are approaches that can be used to mitigate the attack surface.
 
-Impact Assessment 
+1. Constrain the risk to an agreed level
+1. Actively accept the risk to provide an opportuinty to gain a business benefit or advantage
+1. Transfer the risk
+1. Terminiate the activity that gives rise to the risk
 
-Asset List
+Once it has been decided which risk mitigation is the correct treatment approach for the specific risk or group of risks, the next step is to then assess how effective that mitigation technic is to reducting the intial risk.
 
-Risk Assessment
+## Inherent and Residual Risk
 
-Risk Treatment Plan
+There are two catagories of risk:
+
+1. Inherent
+2. Residual
+
+### Inherent
+The inherent risk is the output of an risk assessment without factoring any specific techincal security mitigation. If the organisation has implemented a baseline set of security hygeine, then the Inherent risk can take that into account.  But it will not include mitigations that are specifically targated to reduce the initial inherent risk.
+
+### Residual
+
+The residual risk is the output of the risk assessment after specific techncial security controls have been applied spefically to mitigate that risk. The residual risk is the exposure of the system in respect of the indentified risk which is both acceptable and justifiable.  
+
+The residual risk should be within the risk appetite of associated tolerance for that asset or gorup of assets. 
+
+# __Risk Appettite__
+
+Risk appetite in any organisation can be defined in general terms as the variability in risks that the organisation and its senior execuatives are preapared to accept in support of a stated strategy.
+
+The output of the risk needst o clearly articulate teh key levels of security that is accpetale in a form that is reasily comprehensible to non-specialists.
+
+A risk appetite framework needs to define the approach to indentify the levels of risk that that are acceptable and incorporated into the risk management enterprise. It also reauires the need to identify and capture all the key stakeholder perspectives.
+
+The outcome of the risk appetite framework is a risk appetite statement that addresses an agreed set of information asset groups or systems or business catagories. Once the appetite for the groups has been identified then the appropriate security controls can be identified and applied.
+
+The risk appetite is an evolving state. It is influenced by a number of factors:
+
+1. time since last breach
+1. significance of that breach
+1. changes in statutory requirements
+1. connections to other environments
+1. securit and training awareness
+1. reputational characteristics
+1. buisness objectives
+
+Evidence suggests that the biggest infuencer in a sudden change of risk appetite stance would probably be the detection of a major breach which impacts on the reputation and cost involved in managing the aftermath of the breach.
+
+The risk appetite will be a funciton of how much residual risk can be accepted after mitigation that has been applied to specific area of Buisness, Divsional Units, secific information asset groups, branches, sub branches, units, programmes or projects.
+
+Risk appetites can be defined allowing different risk appetites to be applied to teh varous different units.
+
+## Risk Tolerance
+
+The risk tolerance considers how much the asset owner is prepared to manage a security control in relation to the risk appetite stance to achieved a desired objective for paticular programme or project or business function.
+
+In essence it si teh amount of variation from teh risk appetite which the organisaiton will accept for a paticular business context.
+
+If the risk tolerance is actually lower than the risk appetite, then cosnideration should be given to splitting the asset group as there is probably a desire to have a lower risk appetite for a sub-set fo that paticualer asset group.
+
+## Risk Limit
+
+The security risk limite is a statment that of how much residual risk the varous management layers are permitted to accept on behalf of the organisation.
+
+It should be notes that the acceptance of risk not without potential harm, as if the vulnerability or weakness is compromised the subsequent cost of trying to repair the harm coudl be extemely high and outweigh any benefit from initially accepting the risk.
+
+### Risk Appetite Review
+
+The risk appetite adn assocaited tolerances shoudl be reviewed at least annually.  The appetite should refelct the latest thoughts around the protection of the asset which will be guided by awareness of events that have previously happened.
+
+The must be reviewed after any event or incident that has occurred that may impact the asset or is the asstt group/catagories change in any way.
+
+# __The Risk Appetite Framework__
+
+The first step is to identify the scope of the information assets that are to be assessed.
+
+The risk appetite can be applied to sub-departments, sub-organisations, sub-business fucntional areas where there are different business requirements, functions, working practices that are trying to achieve different strategies and opportunities.
+
+It is advised to split the risk appetite into functional groups.
+
+The next step is to identify the Asset Owners associated with the functional unit.
+
+A risk appetite will then be identified for that functional group.
+
+Each associated information asset component will need to be analysed.
+
+The asset coudl be catagorised as an individual item, a collection of items or an entire organisation.
+
+## The Risk Appetite Questionnaire
+The Asset Owner must go through and answer the questionnaire.
+
+The questionnaire consistes of a set of questions that have been aimed at covering the lifecycle of the programme/project/organisation from development through to transition to business as usual.
+
+The aim of the questionniare is to understand the perception of risk that that the Asset Owner is prepared to accept for that asset/system.
+
+The questionniare ranges in topics to gain an understanding of the Asset Owner perception of the importance from having a control to implement a security regime through to the perception of needing to have the information available to share.
+
+The various questions are catagorised into two types of risk concern: 
+
+1. A business type security concern
+1. Techincal type of security concern
+
+_Business Security concern_: is a risk catagory that is usually mitigate by using busines style management tools, processes or procedures.
+
+_Technical security concern_: is a risk catagory that can be mitigated by implememnting a technical style system control.
+
+The output of the technical control will be very high level and solution agnostic.
+
+Each question has a choice of five responses that the asset owner can choose. The revolve around the change in perception of importance.  Statement C is the reference point which either has statmetns that are either less important or more important.
+
+* A It is really not essential that ...
+* B It is not essential that ...
+* C It is neither not essential or essential that ...
+* D It is essential that ...
+* E It is really essential that ...
+
+The Asset Owner will indicate their response to the question. They are not definitive repsonses, but inicate teh perception of importance in resposne to the question.  There is no right or wrong response.
+
+__Example Question __
+```{r Example Question, cache=FALSE,echo=FALSE}
+renderPrint("How inportant is the Business As Usual Security regime of the <information asset>")
+renderPrint('1: The data-to-day security of the <information asset> is really not essential')
+renderPrint('2: The data-to-day security of the <information asset> is not essential')
+renderPrint('3: The data-to-day security of the <information asset> neither not essential or essential.')
+renderPrint('4: The data-to-day security of the <information asset> is essential.')
+renderPrint('5: The data-to-day security of the <information asset> is really essential.')
+
+sliderInput(
+  inputId = 'Question_Example', label = 'BAU Security Slider',
+  min=1, max=5, value = c(3,3)
+)
+```
+
+
+# __Threats__
+
+# __Vulnerabilities__
+
+# __Impact Assessment __
+
+# __Asset List__
+
+# __Risk Assessment__
+
+# __Risk Treatment Plan__

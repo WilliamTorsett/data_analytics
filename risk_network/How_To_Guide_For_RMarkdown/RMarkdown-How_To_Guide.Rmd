@@ -90,12 +90,14 @@ This window is actually a stripped-down web browser. We do have the option of op
 
 # Lists
 Writing lists can often be a tedious task when using a typical word processor or even HTML or Laytech. Markdown really tries to make that much easier. We are gonna create a new section called lists, and there are multiple types of lists. 
+
 ## Unordered lists
 You can have unordered lists where it's just bullet points or other symbols. And you can have ordered lists where they're ordered by numbers or even letters. We will start with unordered lists. So we'll create a subsection called unordered lists. We create an unordered list by putting each element of the list on it's own line starting with either a dash or an asterisk and a space. Typing a dash is easier than typing an asterisk because you don't require the shift key, so that's what we will go with. So as a simple list let's just list a few fruit. We start with a dash and a space, and we write apples. Then on the next line, dash, space, bananas. Then oranges, and kiwis. We can now knit the document and we see at the bottom we have our section called lists, unordered lists subsection, and a nice bold point list of all of our fruit. It's really that simple to make an unordered list. 
-- apples
-- bananas
-- oranges
-- kiwis
+
+* apples
+* bananas
+* oranges
+* kiwis
 
 
 ## Ordered lists 
