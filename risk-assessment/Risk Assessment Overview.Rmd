@@ -147,17 +147,36 @@ Each question has a choice of five responses that the asset owner can choose. Th
 The Asset Owner will indicate their response to the question. They are not definitive repsonses, but inicate teh perception of importance in resposne to the question.  There is no right or wrong response.
 
 __Example Question __
-```{r Example Question, cache=FALSE,echo=FALSE}
-renderPrint("How inportant is the Business As Usual Security regime of the <information asset>")
-renderPrint('1: The data-to-day security of the <information asset> is really not essential')
-renderPrint('2: The data-to-day security of the <information asset> is not essential')
-renderPrint('3: The data-to-day security of the <information asset> neither not essential or essential.')
-renderPrint('4: The data-to-day security of the <information asset> is essential.')
-renderPrint('5: The data-to-day security of the <information asset> is really essential.')
+```{r Example Question, cache=FALSE,echo=TRUE}
+renderText("How inportant is the Business As Usual Security regime of the <information asset>.")
+```
+```{r render-text-3,cache=FALSE, echo=FALSE}
+renderText(" ")
+renderText("1: The data-to-day security of the 'information asset' is really not essential.")
+```
+
+2: The data-to-day security of the 'information asset' is not essential
+
+3: The data-to-day security of the 'information asset' is neither not essential or essential.
+
+4: The data-to-day security of the 'information asset' is essential.
+
+5: The data-to-day security of the 'information asset' is really essential.
+
+```{r Example Question_slider, cache=FALSE,echo=FALSE}
+sliderInput(
+  inputId = 'Question_Example_Narrow_Response', label = 'Narrow Response',
+  min=1, max=5, value = c(4,5)
+)
 
 sliderInput(
-  inputId = 'Question_Example', label = 'BAU Security Slider',
+  inputId = 'Question_Example_Specific_Response', label = 'Specific Response',
   min=1, max=5, value = c(3,3)
+)
+
+sliderInput(
+  inputId = 'Question_Example_Broad_Response', label = 'Broad Response',
+  min=1, max=5, value = c(3,5)
 )
 ```
 
