@@ -147,37 +147,102 @@ Each question has a choice of five responses that the asset owner can choose. Th
 The Asset Owner will indicate their response to the question. They are not definitive repsonses, but inicate teh perception of importance in resposne to the question.  There is no right or wrong response.
 
 __Example Question __
-```{r Example Question, cache=FALSE,echo=TRUE}
-renderText("How inportant is the Business As Usual Security regime of the <information asset>.")
-```
-```{r render-text-3,cache=FALSE, echo=FALSE}
-renderText(" ")
-renderText("1: The data-to-day security of the 'information asset' is really not essential.")
-```
 
-2: The data-to-day security of the 'information asset' is not essential
+How inportant is the Business As Usual Security regime of the \<information asset\>.
 
-3: The data-to-day security of the 'information asset' is neither not essential or essential.
-
-4: The data-to-day security of the 'information asset' is essential.
-
-5: The data-to-day security of the 'information asset' is really essential.
+1. The data-to-day security of the \<information asset\> is really not essential.
+1. The data-to-day security of the \<information asset\> is not essential
+1. The data-to-day security of the \<information asset\> is neither not essential or essential.
+1. The data-to-day security of the \<information asset\> is essential.
+1. The data-to-day security of the \<information asset\> is really essential.
 
 ```{r Example Question_slider, cache=FALSE,echo=FALSE}
+
+##### Specific Response #####
+sliderInput(
+  inputId = 'Question_Example_Specific_Response', label = 'Specific Response',
+  min=1, max=5, value = c(3,3)
+)
+#### Analysing the input
+Specific_example_rangeR <- reactive({input$Question_Example_Specific_Response[2]}) 
+Specific_example_rangeL <- reactive({input$Question_Example_Specific_Response[1]})
+
+Specific_example_range_hedge <-  reactive({
+  input$Question_Example_Specific_Response[2] - input$Question_Example_Specific_Response[1]
+  })
+
+Specific_example_value <- reactive({
+  if (Specific_example_range_hedge() == 0) {
+ HTML(paste("You have chosen value ", Specific_example_rangeR(), " with certainty"))
+} else if (Specific_example_range_hedge() == 1) {
+ HTML(paste("You have chosen value ", Specific_example_rangeR(), " with ", Specific_example_range_hedge(), "degree of uncertainty"))
+} else {
+ HTML(paste("You have chosen value ", Specific_example_rangeR(), " with ", Specific_example_range_hedge(), "degrees of uncertainty"))
+}
+})
+renderText(Specific_example_value())
+
+renderText(paste("The diference between the left and right pointer = ", Specific_example_range_hedge()))
+
+##### Narrow response #####
 sliderInput(
   inputId = 'Question_Example_Narrow_Response', label = 'Narrow Response',
   min=1, max=5, value = c(4,5)
 )
 
-sliderInput(
-  inputId = 'Question_Example_Specific_Response', label = 'Specific Response',
-  min=1, max=5, value = c(3,3)
-)
+#### Analysing the input
+Narrow_example_rangeR <- reactive({input$Question_Example_Narrow_Response[2]}) 
+Narrow_example_rangeL <- reactive({input$Question_Example_Narrow_Response[1]})
+  
 
+Narrow_example_range_hedge <-  reactive({
+  input$Question_Example_Narrow_Response[2] - input$Question_Example_Narrow_Response[1]
+  })
+  renderPrint(Narrow_example_range_hedge())
+  
+Narrow_example_value <- reactive({
+  if (Narrow_example_range_hedge() == 0) {
+ HTML(paste("You have chosen value ", Narrow_example_rangeR(), " with certainty"))
+} else if (Narrow_example_range_hedge() == 1) {
+ HTML(paste("You have chosen value ", Narrow_example_rangeR(), " with ", Narrow_example_range_hedge(), "degree of uncertainty"))
+} else {
+ HTML(paste("You have chosen value ", Narrow_example_rangeR(), " with ", Narrow_example_range_hedge(), "degrees of uncertainty"))
+}
+})
+renderText(Narrow_example_value())
+
+renderText(paste("The diference between the left and right pointer = ", Narrow_example_range_hedge()))
+
+##### Broad Response #####
 sliderInput(
   inputId = 'Question_Example_Broad_Response', label = 'Broad Response',
   min=1, max=5, value = c(3,5)
 )
+Broad_example_range2 <- renderText({ input$Question_Example_Broad_Response })
+renderText(Broad_example_range2())
+
+#### Analysing the input
+Broad_example_rangeR <- reactive({input$Question_Example_Broad_Response[2]}) 
+Broad_example_rangeL <- reactive({input$Question_Example_Broad_Response[1]})
+  
+
+Broad_example_range_hedge <-  reactive({
+  input$Question_Example_Broad_Response[2] - input$Question_Example_Broad_Response[1]
+  })
+  renderPrint(Broad_example_range_hedge())
+  
+Broad_example_value <- reactive({
+  if (Broad_example_range_hedge() == 0) {
+ HTML(paste("You have chosen value ", Broad_example_rangeR(), " with certainty"))
+} else if (Broad_example_range_hedge() == 1) {
+ HTML(paste("You have chosen value ", Broad_example_rangeR(), " with ", Broad_example_range_hedge(), "degree of uncertainty"))
+} else {
+ HTML(paste("You have chosen value ", Broad_example_rangeR(), " with ", Broad_example_range_hedge(), "degrees of uncertainty"))
+}
+})
+renderText(Broad_example_value())
+
+renderText(paste("The diference between the left and right pointer = ", Broad_example_range_hedge()))
 ```
 
 
