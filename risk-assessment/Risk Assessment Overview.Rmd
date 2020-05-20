@@ -19,6 +19,21 @@ runtime: shiny
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+if (!require("ggplot2")) {
+  install.packages("ggplot2")
+  library(ggplot2)
+}
+if (!require("knitr")) {
+  install.packages("knitr")
+  library(knitr)
+}
+if (!require("lubridate")) {
+  install.packages("lubridate")
+}
+if (!require("ShinyTester")) {
+  install.packages("ShinyTester")
+}
 ```
 # __Risks__
 Risk assessments are used to support the risk management methodology. Risk Management provides an approach to understand the business requirements and determine the Opportunity versus the Threat to idnentify the security risks appropriately.
@@ -147,7 +162,7 @@ Each question has a choice of five responses that the asset owner can choose. Th
 The Asset Owner will indicate their response to the question. They are not definitive repsonses, but inicate teh perception of importance in resposne to the question.  There is no right or wrong response.
 
 __Example Question __
-
+<p>
 How inportant is the Business As Usual Security regime of the \<information asset\>.
 
 1. The data-to-day security of the \<information asset\> is really not essential.
@@ -155,14 +170,20 @@ How inportant is the Business As Usual Security regime of the \<information asse
 1. The data-to-day security of the \<information asset\> is neither not essential or essential.
 1. The data-to-day security of the \<information asset\> is essential.
 1. The data-to-day security of the \<information asset\> is really essential.
+<br>
+<br>
 
 ```{r Example Question_slider, cache=FALSE,echo=FALSE}
-
+renderText("If the Owner is happy to select just one of the answers, then move both sliders to the same location.")
+HTML("<br>")
 ##### Specific Response #####
 sliderInput(
   inputId = 'Question_Example_Specific_Response', label = 'Specific Response',
   min=1, max=5, value = c(3,3)
 )
+
+
+
 #### Analysing the input
 Specific_example_rangeR <- reactive({input$Question_Example_Specific_Response[2]}) 
 Specific_example_rangeL <- reactive({input$Question_Example_Specific_Response[1]})
@@ -173,22 +194,33 @@ Specific_example_range_hedge <-  reactive({
 
 Specific_example_value <- reactive({
   if (Specific_example_range_hedge() == 0) {
- HTML(paste("You have chosen value ", Specific_example_rangeR(), " with certainty"))
+ 
+   HTML(paste("You have chosen value ", Specific_example_rangeR(), " with certainty."))
+ 
 } else if (Specific_example_range_hedge() == 1) {
- HTML(paste("You have chosen value ", Specific_example_rangeR(), " with ", Specific_example_range_hedge(), "degree of uncertainty"))
+  
+   HTML(paste("You have chosen value ", Specific_example_rangeR(), " with ", Specific_example_range_hedge(), "degree of uncertainty."))
+
 } else {
- HTML(paste("You have chosen value ", Specific_example_rangeR(), " with ", Specific_example_range_hedge(), "degrees of uncertainty"))
+ 
+   HTML(paste("You have chosen value ", Specific_example_rangeR(), " with ", Specific_example_range_hedge(), "degrees of uncertainty."))
+ 
 }
 })
 renderText(Specific_example_value())
-
-renderText(paste("The diference between the left and right pointer = ", Specific_example_range_hedge()))
-
+```
+<br>
+<br>
+```{r Narrow_Example_Question_slider, cache=FALSE,echo=FALSE}
+renderText("If the Asset Owner is not sure if the answer lies with one specific answers, then move the sliders to the two adjacent location.")
+HTML("<br>")
 ##### Narrow response #####
 sliderInput(
   inputId = 'Question_Example_Narrow_Response', label = 'Narrow Response',
   min=1, max=5, value = c(4,5)
 )
+
+
 
 #### Analysing the input
 Narrow_example_rangeR <- reactive({input$Question_Example_Narrow_Response[2]}) 
@@ -198,28 +230,31 @@ Narrow_example_rangeL <- reactive({input$Question_Example_Narrow_Response[1]})
 Narrow_example_range_hedge <-  reactive({
   input$Question_Example_Narrow_Response[2] - input$Question_Example_Narrow_Response[1]
   })
-  renderPrint(Narrow_example_range_hedge())
-  
+
 Narrow_example_value <- reactive({
   if (Narrow_example_range_hedge() == 0) {
  HTML(paste("You have chosen value ", Narrow_example_rangeR(), " with certainty"))
 } else if (Narrow_example_range_hedge() == 1) {
- HTML(paste("You have chosen value ", Narrow_example_rangeR(), " with ", Narrow_example_range_hedge(), "degree of uncertainty"))
+ HTML(paste("You have chosen value ", Narrow_example_rangeR(), " with ", Narrow_example_range_hedge(), "degree of uncertainty."))
 } else {
- HTML(paste("You have chosen value ", Narrow_example_rangeR(), " with ", Narrow_example_range_hedge(), "degrees of uncertainty"))
+ HTML(paste("You have chosen value ", Narrow_example_rangeR(), " with ", Narrow_example_range_hedge(), "degrees of uncertainty."))
 }
 })
 renderText(Narrow_example_value())
-
-renderText(paste("The diference between the left and right pointer = ", Narrow_example_range_hedge()))
-
+```
+<br>
+<br>
+```{r Broad_Example_Question_slider, cache=FALSE,echo=FALSE}
+renderText("If the Asset Owner is not sure if the answer lies with one specific answer or even adjecent answers, then move the sliders to cover the range.")
+HTML("<br>")
 ##### Broad Response #####
 sliderInput(
   inputId = 'Question_Example_Broad_Response', label = 'Broad Response',
   min=1, max=5, value = c(3,5)
 )
 Broad_example_range2 <- renderText({ input$Question_Example_Broad_Response })
-renderText(Broad_example_range2())
+
+
 
 #### Analysing the input
 Broad_example_rangeR <- reactive({input$Question_Example_Broad_Response[2]}) 
@@ -229,20 +264,93 @@ Broad_example_rangeL <- reactive({input$Question_Example_Broad_Response[1]})
 Broad_example_range_hedge <-  reactive({
   input$Question_Example_Broad_Response[2] - input$Question_Example_Broad_Response[1]
   })
-  renderPrint(Broad_example_range_hedge())
-  
+
 Broad_example_value <- reactive({
   if (Broad_example_range_hedge() == 0) {
- HTML(paste("You have chosen value ", Broad_example_rangeR(), " with certainty"))
+ HTML(paste("You have chosen value ", Broad_example_rangeR(), " with certainty."))
 } else if (Broad_example_range_hedge() == 1) {
- HTML(paste("You have chosen value ", Broad_example_rangeR(), " with ", Broad_example_range_hedge(), "degree of uncertainty"))
+ HTML(paste("You have chosen value ", Broad_example_rangeR(), " with ", Broad_example_range_hedge(), "degree of uncertainty."))
 } else {
- HTML(paste("You have chosen value ", Broad_example_rangeR(), " with ", Broad_example_range_hedge(), "degrees of uncertainty"))
+ HTML(paste("You have chosen value ", Broad_example_rangeR(), " with ", Broad_example_range_hedge(), "degrees of uncertainty."))
 }
 })
 renderText(Broad_example_value())
+```
+</p>
+<br>
+### Cyber Risk Appetite Assessment
+Overview: A key aspect of understanding the risk appetite of an organisation is its willingness to accepts a risk, when taking into account the 
+<br>
+<p>
+__Question 1: Governance__ 
+_Clarification_: This question seeks to understand the importance of having a control in place to protect the information asset.
 
-renderText(paste("The diference between the left and right pointer = ", Broad_example_range_hedge()))
+How important is the Business As Usual Security regime of the \<information asset\>.
+
+1. The data-to-day security of the \<information asset\> is really not essential.
+1. The data-to-day security of the \<information asset\> is not essential
+1. The data-to-day security of the \<information asset\> is neither not essential or essential.
+1. The data-to-day security of the \<information asset\> is essential.
+1. The data-to-day security of the \<information asset\> is really essential.
+<br>
+<br>
+```{r Question_1_slider, cache=FALSE,echo=FALSE}
+HTML("<br>")
+sliderInput(
+  inputId = 'Question_1_Response', label = 'Question 1 Response',
+  min=1, max=5, value = c(3,3)
+)
+Q1 <- renderText({ input$Question_1_Response })
+
+
+
+#### Analysing the input
+Q1R <- reactive({input$Question_1_Response[2]}) 
+Q1L <- reactive({input$Question_1_Response[1]})
+  
+
+Q1_range_hedge <-  reactive({
+  input$Question_1_Response[2] - input$Question_1_Response[1]
+  })
+
+Q1_value <- reactive({
+  if (Q1_range_hedge() == 0) {
+ HTML(paste("You have chosen value ", Q1R(), " with certainty."))
+} else if (Q1_range_hedge() == 1) {
+ HTML(paste("You have chosen value ", Q1R(), " with ", Q1_range_hedge(), "degree of uncertainty."))
+} else {
+ HTML(paste("You have chosen value ", Q1R(), " with ", Q1_range_hedge(), "degrees of uncertainty."))
+}
+})
+renderText(Q1_value())
+```
+</p>
+
+### Loading Risk Appetite Questions
+Overview: This will display the questions that need to be answered. 
+<br>
+<p>
+
+```{r load_risk_appetite, echo=FALSE}
+library(dplyr, warn.conflicts = FALSE)
+# Load risk appetite data data from CSV
+riskappetite <- data.frame(read.csv("Risk_Appetite_Questions.csv", header = TRUE))
+head(riskappetite)
+i <- nrow(riskappetite)
+head(i)
+selectInput(
+  inputId = 'InputQuestion', label = 'Select the question to answer', choices = c(1:i)
+  )
+
+question <- reactive ({
+  q <- subset(riskappetite, Number == input$InputQuestion)
+  return(q)
+})
+
+renderTable(question())
+
+
+
 ```
 
 
@@ -253,7 +361,85 @@ renderText(paste("The diference between the left and right pointer = ", Broad_ex
 # __Impact Assessment __
 
 # __Asset List__
+```{r Load_Asset_Data, echo=FALSE}
+require(visNetwork)
+# Load nodes data from CSV
+nodeData <- read.csv("~/black_swan/risk_network/ORG-NODES.csv", header = TRUE)
+nodes <- as.data.frame(nodeData)
+
+# Load edges from CSV
+edgeData <- read.csv("~/black_swan/risk_network/ORG-EDGES.csv", header = TRUE)
+edges <- as.data.frame(edgeData)
+
+network <- reactive({
+  nodes %>% select(label, group, group.label)
+})
+
+AssetList = renderTable({
+    network()
+})
+AssetList
+```
+
 
 # __Risk Assessment__
 
+```{r risk_assessment_network, echo=FALSE}
+
+require(visNetwork)
+
+network_proxy_nodes <- renderVisNetwork({
+visNetwork(nodes, edges) %>% visPhysics(stabilization = TRUE) %>% visOptions(highlightNearest = TRUE) %>%  visOptions(nodesIdSelection = TRUE) %>% visLegend() %>% visOptions(manipulation = TRUE)
+                        })
+network_proxy_nodes
+```
+
+
 # __Risk Treatment Plan__
+
+# __Risk Appetite Questions__
+__Question 1: Security Hygiene__ 
+_Clarification_: This question seeks to understnad the importance of having a control in place to protect the information asset.
+
+How inportant is the Business As Usual Security regime of the \<information asset\>.
+
+1. The data-to-day security of the \<information asset\> is really not essential.
+1. The data-to-day security of the \<information asset\> is not essential
+1. The data-to-day security of the \<information asset\> is neither not essential or essential.
+1. The data-to-day security of the \<information asset\> is essential.
+1. The data-to-day security of the \<information asset\> is really essential.
+<br>
+<br>
+```{r Question 1 slider, cache=FALSE,echo=FALSE}
+HTML("<br>")
+sliderInput(
+  inputId = 'Question_1_Response', label = 'Question 1 Response',
+  min=1, max=5, value = c(3,3)
+)
+Q1 <- renderText({ input$Question_1_Response })
+
+
+
+#### Analysing the input
+Q1R <- reactive({input$Question_1_Response[2]}) 
+Q1L <- reactive({input$Question_1_Response[1]})
+  
+
+Q1_range_hedge <-  reactive({
+  input$Question_1_Response[2] - input$Question_1_Response[1]
+  })
+
+
+Q1_value <- reactive({
+  if (Q1_range_hedge() == 0) {
+ HTML(paste("You have chosen value ", Q1R(), " with certainty."))
+} else if (Q1_range_hedge() == 1) {
+ HTML(paste("You have chosen value ", Q1R(), " with ", Q1_range_hedge(), "degree of uncertainty."))
+} else {
+ HTML(paste("You have chosen value ", Q1R(), " with ", Q1_range_hedge(), "degrees of uncertainty."))
+}
+})
+
+renderText(Q1_value())
+```
+</p>
