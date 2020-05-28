@@ -52,14 +52,21 @@ We are looking to initiate this project to achive the following:
     + Low ability to connect risk assessment with useful data/analysis/simulation
     + Low ability for clients to grow risk capability incrementally
     + linkage with business risk!
+    
+### Problem Space
  
-As-Is current processes: 
+The As-Is current state: 
 
 + Manual
 + Qualitative
++ Risks derived on a system component space
++ No holisitc view of scenarion based risks
 + Hard to reuse/refine current documentation and toolsets
++ Dificult to use
 
-To-Be futue processes:
+### Solution Space
+
+The To-Be futue state:
 
 + Semi-Automated
 + Quantitive
@@ -73,50 +80,45 @@ To-Be futue processes:
 
 ### Project Objectives
 
-+ Structured Analsysis of existing data source and frameworks for usability in data-driven cyber risk assessment
-+ Visualisation of Cyber Risks from interconnected systems. (System of Systems)
-+ Prototyping of one or more analytical methods based on the data inputs and visual model in 1 and 2.
-+ Open Framework, publically available, leveraged by extending exsiting ISO 27K framework approach through enhanced enterprise ready solutions.
++ Develop a tool to provide structured analsysis of existing data source and frameworks to provide a data-driven cyber risk assessment
++ Visualisation of Cyber Risks of interconnected systems. (System of Systems).
++ Prototype of one or more analytical methods based on the data inputs and agreed visual model.
++ Developed using an open framework, publically available, leveraged by extending exsiting ISO 27K framework approach through enhanced enterprise ready solutions.
 + Create a collabotative appraoch using agile open technology development initiatives.
-+ Are the chosen data inputs, visual models and analystical techniques feasable?
-+ Ability to use in an on-line and off-line mode.
++ Detrermine that the chosen data inputs, visual models and analystical techniques are feasable.
++ Ability to be used in either an on-line or off-line mode.
 
 ***
 
 ### Goals
 
-The goal is to start with a defined Asset Register.
-
-+ Defined a set of Known Vulnerabilities for the assets
-+ Defined a set of Potential vulnerabilities for the assets
-+ Defined a set of threat actors
-+ Defined an Impact Assessment for the asset register
-
-Create a model that can dynamically assess the information security risks based on changing 
-
-+ Threat Actors characteristics
-+ Vulenrability Characteristics
-+ Confidentiality, Intergrity and Availability characteristics
-
-How does the risk profile change if the threat actor charactoristics change?
-
-How does the risk profile change if the vulnerbaility characteristics change?
-
-How does the risk profile change if the impact assessment changes?
-
-How does the risk profile change if additional security controls are implmented?
-
-How will the changes to the information risk profile be presented visually?
-
-What are the best modelling techniques to use to assess the change in information secuirty risk profile? 
-
-+ Develop an effective approach to modelling the risk of a system using these concepts.
+The goal is to develop an effective approach to modelling the risk of a system using these concepts:
 
   * Greater accuracy
   * Greater consistency
   * Repeatability
   * Speed of analysis
   
+To achieve these goals the proejct will start with a pre-defined set of inputs:
+
++ Define a set of Known Vulnerabilities for the assets
++ Define a set of Potential vulnerabilities for the assets
++ Define a set of threat actors
++ Define an Impact Assessment for the asset register
+
+Create a model that can dynamically assess the information security risks based on the following changes:
+
++ Threat Actors characteristics
++ Vulenrability Characteristics
++ Confidentiality, Intergrity and Availability characteristics
+
+  + How does the risk profile change if the threat actor charactoristics change?
+  + How does the risk profile change if the vulnerbaility characteristics change?
+  + How does the risk profile change if the impact assessment changes?
+  + How does the risk profile change if additional security controls are implmented?
+  + How will the changes to the information risk profile be presented visually?
+  + What are the best modelling techniques to use to assess the change in information secuirty risk profile? 
+
 [Priority] Develop a prototype software tool that is usable online or offline to enable this modelling 
 
   + It must be usable by online or offline to carry out a risk assessment
