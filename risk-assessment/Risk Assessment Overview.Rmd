@@ -1,7 +1,7 @@
 ---
 title: "Risk Assessment Overview"
-author: "William Torsett"
-date: "24/04/2020"
+author: "Open Source"
+date: "26/05/2020"
 output: 
   html_document:
   output: 
@@ -35,6 +35,187 @@ if (!require("ShinyTester")) {
   install.packages("ShinyTester")
 }
 ```
+# __The Project Challenges__
+
+### Project Background
+
+We are looking to initiate this project to achive the following:
+
+ + Transform cyber risk and threat assessment within our industry
+ + Industry leader in the space, promoting industry excellence and behaviours
+ + Develop open toolsets and frameworks for next generation cyber risk assessment
+ + Open toolsets Community-developed OpenSource framework
+ + Existing cyber risk and threat assessment is no longer fit for purpose – an industry-wide challenge
+    + Technology advancement
+    + Risk complexity
+    + Professionals (humans) cannot keep up with the complexity
+    + Low ability to connect risk assessment with useful data/analysis/simulation
+    + Low ability for clients to grow risk capability incrementally
+    + linkage with business risk!
+ 
+As-Is current processes: 
+
++ Manual
++ Qualitative
++ Hard to reuse/refine current documentation and toolsets
+
+To-Be futue processes:
+
++ Semi-Automated
++ Quantitive
++ Predictive Analyitcs
+  + Data Flow diagrams or equivelent
+  + Vulerability/Threat Profiles and supporting automated feeds (CVSS, OSINT, Pen Testing)
+  + Risk Estimation and simulation
++ Resusable documentation and toolsets
+
+***
+
+### Project Objectives
+
++ Structured Analsysis of existing data source and frameworks for usability in data-driven cyber risk assessment
++ Visualisation of Cyber Risks from interconnected systems. (System of Systems)
++ Prototyping of one or more analytical methods based on the data inputs and visual model in 1 and 2.
++ Open Framework, publically available, leveraged by extending exsiting ISO 27K framework approach through enhanced enterprise ready solutions.
++ Extending BSI collabotative appraoch to BSI agile open technology development initiatives.
++ Are the chosen data inputs, visual models and analystical techniques feasable?
++ Ability to use in an on-line and off-line mode.
+
+***
+
+### Goals
+
+The goal is to start with a defined Asset Register.
+
++ Defined a set of Known Vulnerabilities for the assets
++ Defined a set of Potential vulnerabilities for the assets
++ Defined a set of threat actors
++ Defined an Impact Assessment for the asset register
+
+Create a model that can dynamically assess the information security risks based on changing 
+
++ Threat Actors characteristics
++ Vulenrability Characteristics
++ Confidentiality, Intergrity and Availability characteristics
+
+How does the risk profile change if the threat actor charactoristics change?
+
+How does the risk profile change if the vulnerbaility characteristics change?
+
+How does the risk profile change if the impact assessment changes?
+
+How does the risk profile change if additional security controls are implmented?
+
+How will the changes to the information risk profile be presented visually?
+
+What are the best modelling techniques to use to assess the change in information secuirty risk profile? 
+
++ Develop an effective approach to modelling the risk of a system using these concepts.
+
+  * Greater accuracy
+  * Greater consistency
+  * Repeatability
+  * Speed of analysis
+  
+[Priority] Develop a prototype software tool that is usable online or offline to enable this modelling 
+
+  + It must be usable by online or offline to carry out a risk assessment
+  + It must articulate the risk of compromise to the system based on risk scenarios
+  + It must automate the creation of a risk register
+  + It must automate the creation of a risk treatment plan
+  + It must use an acceptable analytics approach based statistical/data analysis techniques
+  + It should be easy to update the model/dataset/input feeds
+  
+[Priority] Viaualisation Representation
+
++ Describe the known or potential vulnerability status 
++ Describe the importance of the data/info on the system
++ What is the best way to describe or represent information security risk within the system? 
++ What is the best way to model the behaviour of a threat actor? (threat modelling)
++ Display the nature of the connection between assets/nodes
++ Articulate the relationship between the assets (i.e. threat modelling?)
+  
++ Group or arrange the assets in a table format and visual format that best descibes how they interact with each other?
+  
+	+ Does Asset A directly communciate with Asset B or vice versa
+	+ Does Asset A use a service of Asset B 
+  + Explain the nature of the connection between assets/nodes - 
+    + what are the possibilities? 
+	    + High level vs Fine grained detial
+  + Define the asset/group taxonomy?
+  + Identify and define all the potential asset types and categories out there that could come up in a risk assessemnt? 
+
+__Additional future Requirements__
+
++ Assess the risk of an attack for particular scenarios? (e.g. web-based attack, phishing attack, networking)
++ Identify the technical security gaps, aligning them with controls defined in key security standards  
++ Develope an analytical engine that produces the risks and risk treatment plan 
++ add a threat actor or event to the nodes
++ identify linking data sources that extend the model 
+
+***
+
+### Identifying Potential Input Collateral
+System types categories:
+
+Asset categories/hierarchy 
+
+	- define the asset taxonomy
+
+Threat modelling frameworks + approaches? 
+What are they?
+
+	- e.g. OWASP/SEI/ATT&CK Mitre
+	- e.g. HARM Taxonomy(https://www.researchgate.net/publication/315459761_Cyber_Harm_Concepts_Taxonomy_and_Measurement)
+
+Asset relationships (i.e. edges)
+
+	- asset A communicates with asset B
+	- asset A uses browser to communicate with Asset B web server
+
+Vulnerability descriptions 
+
+	- e.g. process vulnerability
+	- e.g. misconfiguration
+	- e.g. software flaw 
+
+Use standards as an input Risk taxonomy
+
+	-ISO 93 - risk management definition. 
+
+Explanation/examples of risk (probability + impact + vulnerability etc)
+
+Show them an existing risk assessment approach?
+
++ Risk taxonomy of harm
++ Risk treatment taxonomy 
+
+Potential analytical approaches e.g. 
+
+	- Bayesian
+	- Frequentist 
+
+Vignette - example of org with associated risks
+	(here is one way it could look like)
+	
+
+***
+
+### Potential next Technical steps
+
+1. Creation of a starter data set
+	- "node + edge" CVS file
+	- "threat" CVS file 
+	- "vulnerability CVS file
+	- "asset impact"
+2. Define vignette (a generic model for consideration)
+3. Define an attack scenario
+4. Define supporting documentation - standards, taxonomies, overview of statistical techniques 
+5. Define goal/challenges 
+	- split across teams?  
+
+***
+
 # __Risks__
 Risk assessments are used to support the risk management methodology. Risk Management provides an approach to understand the business requirements and determine the Opportunity versus the Threat to idnentify the security risks appropriately.
 
@@ -58,7 +239,7 @@ Once it has been decided which risk mitigation is the correct treatment approach
 There are two catagories of risk:
 
 1. Inherent
-2. Residual
+1. Residual
 
 ### Inherent
 The inherent risk is the output of an risk assessment without factoring any specific techincal security mitigation. If the organisation has implemented a baseline set of security hygeine, then the Inherent risk can take that into account.  But it will not include mitigations that are specifically targated to reduce the initial inherent risk.
@@ -233,11 +414,11 @@ Narrow_example_range_hedge <-  reactive({
 
 Narrow_example_value <- reactive({
   if (Narrow_example_range_hedge() == 0) {
- HTML(paste("You have chosen value ", Narrow_example_rangeR(), " with certainty"))
+ HTML(paste("You have chosen value ", Narrow_example_rangeR(), " with full confidence."))
 } else if (Narrow_example_range_hedge() == 1) {
- HTML(paste("You have chosen value ", Narrow_example_rangeR(), " with ", Narrow_example_range_hedge(), "degree of uncertainty."))
+ HTML(paste("You have chosen value ", Narrow_example_rangeR(), " with ", Narrow_example_range_hedge(), "degree of confidence."))
 } else {
- HTML(paste("You have chosen value ", Narrow_example_rangeR(), " with ", Narrow_example_range_hedge(), "degrees of uncertainty."))
+ HTML(paste("You have chosen value ", Narrow_example_rangeR(), " with ", Narrow_example_range_hedge(), "degrees of confidence."))
 }
 })
 renderText(Narrow_example_value())
@@ -269,9 +450,9 @@ Broad_example_value <- reactive({
   if (Broad_example_range_hedge() == 0) {
  HTML(paste("You have chosen value ", Broad_example_rangeR(), " with certainty."))
 } else if (Broad_example_range_hedge() == 1) {
- HTML(paste("You have chosen value ", Broad_example_rangeR(), " with ", Broad_example_range_hedge(), "degree of uncertainty."))
+ HTML(paste("You have chosen value ", Broad_example_rangeR(), " with ", Broad_example_range_hedge(), "degree of confidence."))
 } else {
- HTML(paste("You have chosen value ", Broad_example_rangeR(), " with ", Broad_example_range_hedge(), "degrees of uncertainty."))
+ HTML(paste("You have chosen value ", Broad_example_rangeR(), " with ", Broad_example_range_hedge(), "degrees of confidence."))
 }
 })
 renderText(Broad_example_value())
@@ -317,9 +498,9 @@ Q1_value <- reactive({
   if (Q1_range_hedge() == 0) {
  HTML(paste("You have chosen value ", Q1R(), " with certainty."))
 } else if (Q1_range_hedge() == 1) {
- HTML(paste("You have chosen value ", Q1R(), " with ", Q1_range_hedge(), "degree of uncertainty."))
+ HTML(paste("You have chosen value ", Q1R(), " with ", Q1_range_hedge(), "degree of confidence."))
 } else {
- HTML(paste("You have chosen value ", Q1R(), " with ", Q1_range_hedge(), "degrees of uncertainty."))
+ HTML(paste("You have chosen value ", Q1R(), " with ", Q1_range_hedge(), "degrees of confidence."))
 }
 })
 renderText(Q1_value())
@@ -344,11 +525,11 @@ selectInput(
 
 question <- reactive ({
   q <- subset(riskappetite, Number == input$InputQuestion)
-  return(q)
+  
+  return(q[1])
 })
 
 renderTable(question())
-
 
 
 ```
@@ -434,9 +615,9 @@ Q1_value <- reactive({
   if (Q1_range_hedge() == 0) {
  HTML(paste("You have chosen value ", Q1R(), " with certainty."))
 } else if (Q1_range_hedge() == 1) {
- HTML(paste("You have chosen value ", Q1R(), " with ", Q1_range_hedge(), "degree of uncertainty."))
+ HTML(paste("You have chosen value ", Q1R(), " with ", Q1_range_hedge(), "degree of confidence."))
 } else {
- HTML(paste("You have chosen value ", Q1R(), " with ", Q1_range_hedge(), "degrees of uncertainty."))
+ HTML(paste("You have chosen value ", Q1R(), " with ", Q1_range_hedge(), "degrees of confidence."))
 }
 })
 

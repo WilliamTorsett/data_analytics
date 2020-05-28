@@ -80,3 +80,4 @@ visExport <- function(graph, type = "png", name = "network",
   
   graph
 }
+
