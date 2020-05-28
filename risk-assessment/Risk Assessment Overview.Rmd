@@ -77,7 +77,7 @@ To-Be futue processes:
 + Visualisation of Cyber Risks from interconnected systems. (System of Systems)
 + Prototyping of one or more analytical methods based on the data inputs and visual model in 1 and 2.
 + Open Framework, publically available, leveraged by extending exsiting ISO 27K framework approach through enhanced enterprise ready solutions.
-+ Extending BSI collabotative appraoch to BSI agile open technology development initiatives.
++ Create a collabotative appraoch using agile open technology development initiatives.
 + Are the chosen data inputs, visual models and analystical techniques feasable?
 + Ability to use in an on-line and off-line mode.
 
