@@ -34,63 +34,97 @@ if (!require("lubridate")) {
 if (!require("ShinyTester")) {
   install.packages("ShinyTester")
 }
+if (!require("tidyr")) {
+  install.packages("tidyr")
+}
+if (!require("magrittr")) {
+  install.packages("magrittr")
+}
+if (!require("dplyr")) {
+  install.packages("dplyr")
+}
 ```
-# __The Project Challenges__
 
 ### Project Background
 
-We are looking to initiate this project to achive the following:
+This project is looking to achieve the following:
 
  + Transform cyber risk and threat assessment within our industry
- + Industry leader in the space, promoting industry excellence and behaviours
- + Develop open toolsets and frameworks for next generation cyber risk assessment
- + Open toolsets Community-developed OpenSource framework
- + Existing cyber risk and threat assessment is no longer fit for purpose – an industry-wide challenge
+ + Achieve Industry leader status in this inforamtion secuirty risk space, promoting industry excellence and behaviours
+ + Develop open source tool sets and frameworks for next generation cyber risk assessment
+ + Community-developed Open Source framework
+
+***
+
+    
+### Problem Space
+ 
+The As-Is Industry'* current state: 
+
++ Manual
++ Qualitative
++ Existing cyber risk and threat assessment is no longer fit for purpose – an industry-wide challenge
     + Technology advancement
     + Risk complexity
     + Professionals (humans) cannot keep up with the complexity
     + Low ability to connect risk assessment with useful data/analysis/simulation
     + Low ability for clients to grow risk capability incrementally
     + linkage with business risk!
-    
-### Problem Space
- 
-The As-Is current state: 
-
-+ Manual
-+ Qualitative
 + Risks derived on a system component space
-+ No holisitc view of scenarion based risks
-+ Hard to reuse/refine current documentation and toolsets
-+ Dificult to use
++ No holistic view of scenario based risks
++ Hard to reuse/refine current documentation and tool sets
++ Difficult to use
+
+'* It should be noted that there are a small number of organisations that are working on adding quantification to this problem.
+
+***
 
 ### Solution Space
 
-The To-Be futue state:
+The To-Be future state:
 
 + Semi-Automated
-+ Quantitive
-+ Predictive Analyitcs
-  + Data Flow diagrams or equivelent
-  + Vulerability/Threat Profiles and supporting automated feeds (CVSS, OSINT, Pen Testing)
++ Quantitative
++ Predictive Analytics
+  + Data Flow diagrams or equivalent
+  + Vulnerability/Threat Profiles and supporting automated feeds (CVSS, OSINT, Pen Testing)
   + Risk Estimation and simulation
-+ Resusable documentation and toolsets
++ Reusable documentation and tool sets
 
 ***
 
 ### Project Objectives
 
-+ Develop a tool to provide structured analsysis of existing data source and frameworks to provide a data-driven cyber risk assessment
-+ Visualisation of Cyber Risks of interconnected systems. (System of Systems).
-+ Prototype of one or more analytical methods based on the data inputs and agreed visual model.
-+ Developed using an open framework, publically available, leveraged by extending exsiting ISO 27K framework approach through enhanced enterprise ready solutions.
-+ Create a collabotative appraoch using agile open technology development initiatives.
-+ Detrermine that the chosen data inputs, visual models and analystical techniques are feasable.
-+ Ability to be used in either an on-line or off-line mode.
+This project aims to use an open framework, that will be publicly available, leveraging the existing ISO 27K framework approach, to provide an enhanced enterprise ready risk assessment solution.
+
+Create a collaborative approach using agile open source technologies and development initiatives.
+
+Ability for tool to be used in either an on-line or off-line mode.
 
 ***
 
-### Goals
+
+There are three themes that cover the objectives of this project:
+
+#### Themes
+
+1. Visualisation
+
+    + Visualisation of Cyber Risks of interconnected systems. (System of Systems).
+
+1. Data Analytics
+
+    + Prototype of one or more analytical methods based on the data inputs and agreed visual model.
+    + Develop a tool to provide structured analsysis of existing data source and frameworks to provide a data-driven cyber risk assessment
+        
+1. Data Inputs
+
+    + Detrermine that the chosen data inputs, visual models and analystical techniques are feasable.
+
+
+***
+
+### Goal to achieve objectives
 
 The goal is to develop an effective approach to modelling the risk of a system using these concepts:
 
@@ -98,8 +132,13 @@ The goal is to develop an effective approach to modelling the risk of a system u
   * Greater consistency
   * Repeatability
   * Speed of analysis
+
+
+***
+
+### Potential Steps to achieve objectives
   
-To achieve these goals the proejct will start with a pre-defined set of inputs:
+To achieve these goals the project will start with a pre-defined set of inputs:
 
 + Define a set of Known Vulnerabilities for the assets
 + Define a set of Potential vulnerabilities for the assets
@@ -109,15 +148,15 @@ To achieve these goals the proejct will start with a pre-defined set of inputs:
 Create a model that can dynamically assess the information security risks based on the following changes:
 
 + Threat Actors characteristics
-+ Vulenrability Characteristics
-+ Confidentiality, Intergrity and Availability characteristics
++ Vulnerability Characteristics
++ Confidentiality, Integrity and Availability characteristics
 
-  + How does the risk profile change if the threat actor charactoristics change?
-  + How does the risk profile change if the vulnerbaility characteristics change?
+  + How does the risk profile change if the threat actor characteristics change?
+  + How does the risk profile change if the vulnerability characteristics change?
   + How does the risk profile change if the impact assessment changes?
-  + How does the risk profile change if additional security controls are implmented?
+  + How does the risk profile change if additional security controls are implemented?
   + How will the changes to the information risk profile be presented visually?
-  + What are the best modelling techniques to use to assess the change in information secuirty risk profile? 
+  + What are the best modelling techniques to use to assess the change in information security risk profile? 
 
 [Priority] Develop a prototype software tool that is usable online or offline to enable this modelling 
 
@@ -137,73 +176,29 @@ Create a model that can dynamically assess the information security risks based 
 + Display the nature of the connection between assets/nodes
 + Articulate the relationship between the assets (i.e. threat modelling?)
   
-+ Group or arrange the assets in a table format and visual format that best descibes how they interact with each other?
++ Group or arrange the assets in a table format and visual format that best describes how they interact with each other?
   
-	+ Does Asset A directly communciate with Asset B or vice versa
+	+ Does Asset A directly communicate with Asset B or vice versa
 	+ Does Asset A use a service of Asset B 
   + Explain the nature of the connection between assets/nodes - 
     + what are the possibilities? 
-	    + High level vs Fine grained detial
+	    + High level vs Fine grained detail
   + Define the asset/group taxonomy?
-  + Identify and define all the potential asset types and categories out there that could come up in a risk assessemnt? 
+  + Identify and define all the potential asset types and categories out there that could come up in a risk assessment? 
 
-__Additional future Requirements__
+***
+
+__Additional Future Requirements__
 
 + Assess the risk of an attack for particular scenarios? (e.g. web-based attack, phishing attack, networking)
 + Identify the technical security gaps, aligning them with controls defined in key security standards  
-+ Develope an analytical engine that produces the risks and risk treatment plan 
++ Develop an analytically engine that produces the risks and risk treatment plan 
 + add a threat actor or event to the nodes
 + identify linking data sources that extend the model 
 
 ***
 
-### Identifying Potential Input Collateral
-System types categories:
-
-Asset categories/hierarchy 
-
-	- define the asset taxonomy
-
-Threat modelling frameworks + approaches? 
-What are they?
-
-	- e.g. OWASP/SEI/ATT&CK Mitre
-	- e.g. HARM Taxonomy(https://www.researchgate.net/publication/315459761_Cyber_Harm_Concepts_Taxonomy_and_Measurement)
-
-Asset relationships (i.e. edges)
-
-	- asset A communicates with asset B
-	- asset A uses browser to communicate with Asset B web server
-
-Vulnerability descriptions 
-
-	- e.g. process vulnerability
-	- e.g. misconfiguration
-	- e.g. software flaw 
-
-Use standards as an input Risk taxonomy
-
-	-ISO 93 - risk management definition. 
-
-Explanation/examples of risk (probability + impact + vulnerability etc)
-
-Show them an existing risk assessment approach?
-
-+ Risk taxonomy of harm
-+ Risk treatment taxonomy 
-
-Potential analytical approaches e.g. 
-
-	- Bayesian
-	- Frequentist 
-
-Vignette - example of org with associated risks
-	(here is one way it could look like)
-	
-
-***
-
-### Potential next Technical steps
+__Potential next technical steps__
 
 1. Creation of a starter data set
 	- "node + edge" CVS file
@@ -218,49 +213,53 @@ Vignette - example of org with associated risks
 
 ***
 
+---
+	
+***
+
 # __Risks__
-Risk assessments are used to support the risk management methodology. Risk Management provides an approach to understand the business requirements and determine the Opportunity versus the Threat to idnentify the security risks appropriately.
+Risk assessments are used to support the risk management methodology. Risk Management provides an approach to understand the business requirements and determine the Opportunity versus the Threat to identify the security risks appropriately.
 
 ## Risks: Threats and Opportunities.
 Risks can be either positive or a negative. Every business or organisation is looking to exploit an opportunity in order to achieve a business strategy and objective. 
 
-Every time a business seeks to exploit an opportunity, this creates an equal and opposite opportunity for a threat actor to exploit a security weakness of the business. i.e. The application of implementing the opportunity increases the potentail attack surface.
+Every time a business seeks to exploit an opportunity, this creates an equal and opposite opportunity for a threat actor to exploit a security weakness of the business. i.e. The application of implementing the opportunity increases the potential attack surface.
 
 ## Risk Mitigation
-As a consequence of identyfying the security risks the following are approaches that can be used to mitigate the attack surface.
+As a consequence of identifying the security risks the following are approaches that can be used to mitigate the attack surface.
 
 1. Constrain the risk to an agreed level
-1. Actively accept the risk to provide an opportuinty to gain a business benefit or advantage
+1. Actively accept the risk to provide an opportunity to gain a business benefit or advantage
 1. Transfer the risk
-1. Terminiate the activity that gives rise to the risk
+1. Terminate the activity that gives rise to the risk
 
-Once it has been decided which risk mitigation is the correct treatment approach for the specific risk or group of risks, the next step is to then assess how effective that mitigation technic is to reducting the intial risk.
+Once it has been decided which risk mitigation is the correct treatment approach for the specific risk or group of risks, the next step is to then assess how effective that mitigation technique is to reducing the initial risk.
 
 ## Inherent and Residual Risk
 
-There are two catagories of risk:
+There are two categories of risk:
 
 1. Inherent
 1. Residual
 
 ### Inherent
-The inherent risk is the output of an risk assessment without factoring any specific techincal security mitigation. If the organisation has implemented a baseline set of security hygeine, then the Inherent risk can take that into account.  But it will not include mitigations that are specifically targated to reduce the initial inherent risk.
+The inherent risk is the output of an risk assessment without factoring any specific technical security mitigation. If the organisation has implemented a baseline set of security hygiene, then the Inherent risk can take that into account.  But it will not include mitigations that are specifically targeted to reduce the initial inherent risk.
 
 ### Residual
 
-The residual risk is the output of the risk assessment after specific techncial security controls have been applied spefically to mitigate that risk. The residual risk is the exposure of the system in respect of the indentified risk which is both acceptable and justifiable.  
+The residual risk is the output of the risk assessment after specific technical security controls have been applied specifically to mitigate that risk. The residual risk is the exposure of the system in respect of the identified risk which is both acceptable and justifiable.  
 
-The residual risk should be within the risk appetite of associated tolerance for that asset or gorup of assets. 
+The residual risk should be within the risk appetite of associated tolerance for that asset or group of assets. 
 
-# __Risk Appettite__
+# __Risk Appetite__
 
-Risk appetite in any organisation can be defined in general terms as the variability in risks that the organisation and its senior execuatives are preapared to accept in support of a stated strategy.
+Risk appetite in any organisation can be defined in general terms as the variability in risks that the organisation and its senior executives are prepared to accept in support of a stated strategy.
 
-The output of the risk needst o clearly articulate teh key levels of security that is accpetale in a form that is reasily comprehensible to non-specialists.
+The output of the risk needs to clearly articulate the key levels of security that is acceptable in a form that is easily comprehensible to non-specialists.
 
-A risk appetite framework needs to define the approach to indentify the levels of risk that that are acceptable and incorporated into the risk management enterprise. It also reauires the need to identify and capture all the key stakeholder perspectives.
+A risk appetite framework needs to define the approach to identify the levels of risk that that are acceptable and incorporated into the risk management enterprise. It also requires the need to identify and capture all the key stakeholder perspectives.
 
-The outcome of the risk appetite framework is a risk appetite statement that addresses an agreed set of information asset groups or systems or business catagories. Once the appetite for the groups has been identified then the appropriate security controls can be identified and applied.
+The outcome of the risk appetite framework is a risk appetite statement that addresses an agreed set of information asset groups or systems or business categories. Once the appetite for the groups has been identified then the appropriate security controls can be identified and applied.
 
 The risk appetite is an evolving state. It is influenced by a number of factors:
 
@@ -268,41 +267,41 @@ The risk appetite is an evolving state. It is influenced by a number of factors:
 1. significance of that breach
 1. changes in statutory requirements
 1. connections to other environments
-1. securit and training awareness
+1. security and training awareness
 1. reputational characteristics
-1. buisness objectives
+1. business objectives
 
-Evidence suggests that the biggest infuencer in a sudden change of risk appetite stance would probably be the detection of a major breach which impacts on the reputation and cost involved in managing the aftermath of the breach.
+Evidence suggests that the biggest influencer in a sudden change of risk appetite stance would probably be the detection of a major breach which impacts on the reputation and cost involved in managing the aftermath of the breach.
 
-The risk appetite will be a funciton of how much residual risk can be accepted after mitigation that has been applied to specific area of Buisness, Divsional Units, secific information asset groups, branches, sub branches, units, programmes or projects.
+The risk appetite will be a function of how much residual risk can be accepted after mitigation that has been applied to specific area of Business, Divisional Units, specific information asset groups, branches, sub branches, units, programmes or projects.
 
-Risk appetites can be defined allowing different risk appetites to be applied to teh varous different units.
+Risk appetites can be defined allowing different risk appetites to be applied to the various different units.
 
 ## Risk Tolerance
 
-The risk tolerance considers how much the asset owner is prepared to manage a security control in relation to the risk appetite stance to achieved a desired objective for paticular programme or project or business function.
+The risk tolerance considers how much the asset owner is prepared to manage a security control in relation to the risk appetite stance to achieved a desired objective for particular programme or project or business function.
 
-In essence it si teh amount of variation from teh risk appetite which the organisaiton will accept for a paticular business context.
+In essence it is the amount of variation from the risk appetite which the organisation will accept for a particular business context.
 
-If the risk tolerance is actually lower than the risk appetite, then cosnideration should be given to splitting the asset group as there is probably a desire to have a lower risk appetite for a sub-set fo that paticualer asset group.
+If the risk tolerance is actually lower than the risk appetite, then consideration should be given to splitting the asset group as there is probably a desire to have a lower risk appetite for a sub-set of that particular asset group.
 
 ## Risk Limit
 
-The security risk limite is a statment that of how much residual risk the varous management layers are permitted to accept on behalf of the organisation.
+The security risk limit is a statement that of how much residual risk the various management layers are permitted to accept on behalf of the organisation.
 
-It should be notes that the acceptance of risk not without potential harm, as if the vulnerability or weakness is compromised the subsequent cost of trying to repair the harm coudl be extemely high and outweigh any benefit from initially accepting the risk.
+It should be notes that the acceptance of risk not without potential harm, as if the vulnerability or weakness is compromised the subsequent cost of trying to repair the harm could be extremely high and outweigh any benefit from initially accepting the risk.
 
 ### Risk Appetite Review
 
-The risk appetite adn assocaited tolerances shoudl be reviewed at least annually.  The appetite should refelct the latest thoughts around the protection of the asset which will be guided by awareness of events that have previously happened.
+The risk appetite and associated tolerances should be reviewed at least annually.  The appetite should reflect the latest thoughts around the protection of the asset which will be guided by awareness of events that have previously happened.
 
-The must be reviewed after any event or incident that has occurred that may impact the asset or is the asstt group/catagories change in any way.
+The must be reviewed after any event or incident that has occurred that may impact the asset or is the asset group/categories change in any way.
 
 # __The Risk Appetite Framework__
 
 The first step is to identify the scope of the information assets that are to be assessed.
 
-The risk appetite can be applied to sub-departments, sub-organisations, sub-business fucntional areas where there are different business requirements, functions, working practices that are trying to achieve different strategies and opportunities.
+The risk appetite can be applied to sub-departments, sub-organisations, sub-business functional areas where there are different business requirements, functions, working practices that are trying to achieve different strategies and opportunities.
 
 It is advised to split the risk appetite into functional groups.
 
@@ -312,29 +311,29 @@ A risk appetite will then be identified for that functional group.
 
 Each associated information asset component will need to be analysed.
 
-The asset coudl be catagorised as an individual item, a collection of items or an entire organisation.
+The asset could be categorised as an individual item, a collection of items or an entire organisation.
 
 ## The Risk Appetite Questionnaire
 The Asset Owner must go through and answer the questionnaire.
 
-The questionnaire consistes of a set of questions that have been aimed at covering the lifecycle of the programme/project/organisation from development through to transition to business as usual.
+The questionnaire consists of a set of questions that have been aimed at covering the life cycle of the programme/project/organisation from development through to transition to business as usual.
 
-The aim of the questionniare is to understand the perception of risk that that the Asset Owner is prepared to accept for that asset/system.
+The aim of the questionnaire is to understand the perception of risk that that the Asset Owner is prepared to accept for that asset/system.
 
-The questionniare ranges in topics to gain an understanding of the Asset Owner perception of the importance from having a control to implement a security regime through to the perception of needing to have the information available to share.
+The questionnaire ranges in topics to gain an understanding of the Asset Owner perception of the importance from having a control to implement a security regime through to the perception of needing to have the information available to share.
 
-The various questions are catagorised into two types of risk concern: 
+The various questions are categorised into two types of risk concern: 
 
 1. A business type security concern
-1. Techincal type of security concern
+1. Technical type of security concern
 
-_Business Security concern_: is a risk catagory that is usually mitigate by using busines style management tools, processes or procedures.
+_Business Security concern_: is a risk category that is usually mitigate by using business style management tools, processes or procedures.
 
-_Technical security concern_: is a risk catagory that can be mitigated by implememnting a technical style system control.
+_Technical security concern_: is a risk category that can be mitigated by implementing a technical style system control.
 
 The output of the technical control will be very high level and solution agnostic.
 
-Each question has a choice of five responses that the asset owner can choose. The revolve around the change in perception of importance.  Statement C is the reference point which either has statmetns that are either less important or more important.
+Each question has a choice of five responses that the asset owner can choose. The revolve around the change in perception of importance.  Statement C is the reference point which either has statements that are either less important or more important.
 
 * A It is really not essential that ...
 * B It is not essential that ...
@@ -342,11 +341,11 @@ Each question has a choice of five responses that the asset owner can choose. Th
 * D It is essential that ...
 * E It is really essential that ...
 
-The Asset Owner will indicate their response to the question. They are not definitive repsonses, but inicate teh perception of importance in resposne to the question.  There is no right or wrong response.
+The Asset Owner will indicate their response to the question. They are not definitive responses, but indicate the perception of importance in response to the question.  There is no right or wrong response.
 
 __Example Question __
 <p>
-How inportant is the Business As Usual Security regime of the \<information asset\>.
+How important is the Business As Usual Security regime of the \<information asset\>.
 
 1. The data-to-day security of the \<information asset\> is really not essential.
 1. The data-to-day security of the \<information asset\> is not essential
@@ -428,7 +427,7 @@ renderText(Narrow_example_value())
 <br>
 <br>
 ```{r Broad_Example_Question_slider, cache=FALSE,echo=FALSE}
-renderText("If the Asset Owner is not sure if the answer lies with one specific answer or even adjecent answers, then move the sliders to cover the range.")
+renderText("If the Asset Owner is not sure if the answer lies with one specific answer or even adjacent answers, then move the sliders to cover the range.")
 HTML("<br>")
 ##### Broad Response #####
 sliderInput(
@@ -509,29 +508,99 @@ renderText(Q1_value())
 ```
 </p>
 
-### Loading Risk Appetite Questions
+### Risk Appetite Questions
 Overview: This will display the questions that need to be answered. 
 <br>
 <p>
 
 ```{r load_risk_appetite, echo=FALSE}
-library(dplyr, warn.conflicts = FALSE)
+library(dplyr, magrittr, tidyr, warn.conflicts = FALSE)
 # Load risk appetite data data from CSV
-riskappetite <- data.frame(read.csv("Risk_Appetite_Questions.csv", header = TRUE))
-head(riskappetite)
+riskappetite <- read.csv("Risk_Appetite_Questions.csv", header = TRUE) 
+riskappetiteQ <- riskappetite %>%  select(Number, Detail) %>% unite(QuestionList, Number, Detail, sep=". ")
+
 i <- nrow(riskappetite)
-head(i)
+#looking at the data
+#riskappetite %>% glimpse()
+#riskappetiteQ %>% glimpse()
+
 selectInput(
-  inputId = 'InputQuestion', label = 'Select the question to answer', choices = c(1:i)
+  inputId = 'InputQuestion', label = 'Select the question to answer', choices = riskappetiteQ
   )
 
+actionButton("Back", "Previous Record")
+actionButton("Start", "Start the Questions")
+actionButton("Next", "Next Record")
+
 question <- reactive ({
-  q <- subset(riskappetite, Number == input$InputQuestion)
+  QuestionNumber <- as.numeric(unlist(regmatches(input$InputQuestion,
+                             gregexpr("[[:digit:]]+\\.*[[:digit:]]*",input$InputQuestion), invert = FALSE)))
+  q <- subset(riskappetite, Number == QuestionNumber)
+  return(q[2])
+#  return(QuestionNumber)
+})
   
+  questionNo <- reactive ({
+  QuestionNumber <- as.numeric(unlist(regmatches(input$InputQuestion, gregexpr("[[:digit:]]+\\.*[[:digit:]]*",input$InputQuestion))))
+  
+  q <- subset(riskappetite, Number == QuestionNumber)
   return(q[1])
 })
+  
+##
+## Example code to use for renderTable and action buttons.
+##
+#
+selectInput(
+  inputId = 'InputQuestion', label = 'Select the question to answer', choices = riskappetiteQ
+  )
 
-renderTable(question())
+actionButton("Back", "Previous Record")
+actionButton("Start", "Start the Questions")
+actionButton("Next", "Next Record")
+div(
+  style = "height:100px;",
+  tableOutput("Risk Appettite Quesitons")
+)
+tableOutput("table")
+
+Move_Back <- reactiveVal(-1)
+Move_Next <- reactiveVal(-1)
+Remove_Start <-reactiveVal(-1)
+
+observeEvent(input$Next, {
+  Remove_Start(input$Start)
+})
+
+observeEvent(input$Back, {
+  Remove_Start(input$Start)
+})
+
+
+Display_Question <- reactive({
+  tibble(
+    StartButton = input$Start,
+    NextButton = input$Next,
+    BackButton = input$Back,
+    Move_Start = move_start(),
+    Move_Next = move_next(),
+    Move_Back = move_back(),
+    TicValue = input$Tic,
+##     `submit_at_clear() != input$Submit?` = submit_at_clear() != input$Submit
+  )
+})
+
+renderTable({
+  Display_Question()
+})
+
+renderTable({
+  if (move_start() != 1) {
+    riskappetite()
+  } else {
+    NULL
+  }
+})
 
 
 ```
@@ -584,7 +653,7 @@ network_proxy_nodes
 __Question 1: Security Hygiene__ 
 _Clarification_: This question seeks to understnad the importance of having a control in place to protect the information asset.
 
-How inportant is the Business As Usual Security regime of the \<information asset\>.
+How important is the Business As Usual Security regime of the \<information asset\>.
 
 1. The data-to-day security of the \<information asset\> is really not essential.
 1. The data-to-day security of the \<information asset\> is not essential

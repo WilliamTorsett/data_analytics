@@ -31,13 +31,14 @@ docker build --rm --force-rm -t rstudio/rstudio-kitematic .
 # docker volume rm kitematic
 
 DATA_DIR=/mnt/data/black_swan
+DATA_TEMP=/mnt/data/opportunities
 # changed {$pwd} as I want to to use a specific location.
 
 # Convert rstudio-kitematic to rstudio-risk and remove Kitematic volume.
 sudo ./docker-copyedit.py FROM rstudio/rstudio-kitematic INTO rstudio/rstudio-risk -vv REMOVE VOLUME /home/rstudio/kitematic
 
 #Run the Docker Container rstudio/rstudio-risk
-docker run -d --rm -p 8787:8787 --name rstudio -e PASSWORD=password -e USERID=$UID -v $DATA_DIR:/home/rstudio/black_swan rstudio/rstudio-risk
+docker run -d --rm -p 8787:8787 --name rstudio -e PASSWORD=password -e USERID=$UID -v $DATA_DIR:/home/rstudio/black_swan -v $DATA_TEMP:/home/rstudio/opportunities rstudio/rstudio-risk
 # removed sudo from line above as the userid is part of docker group
 
 # this is an example of running the container in interactive mode and logging into a bash shell
@@ -49,7 +50,7 @@ docker exec -d rstudio rm -rf /home/rstudio/kitematic
 docker image prune --force
 TIME2=$(date -%s)
 
-## Subtracking Start-time and Stop-time proving duration of this scipt in seconds.
+## Subtracting Start-time and Stop-time proving duration of this scipt in seconds.
 
 runtime=$((TIME2 - TIME1))
 

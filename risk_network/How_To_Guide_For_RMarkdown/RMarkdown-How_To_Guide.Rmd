@@ -392,7 +392,7 @@ Sometimes, though, one line of text isn't enough. They need a block of text, an 
 textAreaInput(inputId = 'TextAreasample', label = 'Area to Enter a lot of text')
 ```
 
-##Obfuscate text
+## Obfuscate text
 There are times when you want to obfuscate what they enter, such as a password. For that, we use password input. Same exact format, inputid="Passwordsample" and label we will say, "Protect your password." We knit the document. We now have a password box where the password is obscured. There are numerous ways to enter freeform text, including a single line text input, a multi-line text area input, and a password input. This gives you flexibility in how you let your users input text.
 
 
