@@ -1,3 +1,4 @@
+This repository has moved to www.riskassessments.io.
 
 Cyber Risk Assessment Tool
 ========================================================
